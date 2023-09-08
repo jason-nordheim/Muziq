@@ -29,6 +29,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@stripe/stripe-js": "2.1.2"
+    "@stripe/stripe-js": "2.1.2",
+    "encoding": "0.1.13"
   }
 }
