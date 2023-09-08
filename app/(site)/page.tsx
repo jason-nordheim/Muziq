@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import ListItem, { LikedListItem } from "@/components/ListItem";
+import { LikedListItem } from "@/components/ListItem";
 
 export default function Home() {
   return (
