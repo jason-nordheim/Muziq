@@ -7,8 +7,9 @@ import { BiSearch } from "react-icons/bi";
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
+import { Song } from "@/types";
 
-const Sidebar: FC<PropsWithChildren> = ({ children }) => {
+const Sidebar: FC<PropsWithChildren<{ songs: Song[] }>> = ({ children, songs }) => {
   const pathname = usePathname();
 
   const routes = useMemo(() => {
@@ -32,17 +33,17 @@ const Sidebar: FC<PropsWithChildren> = ({ children }) => {
     <div id="sidebar-container" className="flex h-full">
       <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
         <Box>
-          <div className="flex flex-col gap-y-4 px-5 py-4">
+          <div className="flex flex-col px-5 py-4 gap-y-4">
             {routes.map((item) => (
               <SidebarItem key={item.label} {...item} />
             ))}
           </div>
         </Box>
-        <Box className="overflow-y-auto h-full flex-1">
-          <Library />
+        <Box className="flex-1 h-full overflow-y-auto">
+          <Library songs={songs} />
         </Box>
       </div>
-      <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
+      <main className="flex-1 h-full py-2 overflow-y-auto">{children}</main>
     </div>
   );
 };

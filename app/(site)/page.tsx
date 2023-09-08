@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { LikedListItem } from "@/components/ListItem";
 import PageContent from "@/components/PageContent";
 
+// prevent caching
 export const revalidate = 0;
 
 export default async function Home() {
