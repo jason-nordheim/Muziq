@@ -1,5 +1,6 @@
 import getSongsByTitle from "@/actions/getSongsByTitle";
 import Header from "@/components/Header";
+import SearchContent from "@/components/SearchContent";
 import SearchInput from "@/components/SearchInput";
 import { FC } from "react";
 
@@ -8,7 +9,7 @@ const SearchPage: FC<{
     title: string;
   };
 }> = async ({ searchParams }) => {
-  const songs = getSongsByTitle(searchParams.title);
+  const songs = await getSongsByTitle(searchParams.title);
 
   return (
     <div className="w-full h-full overflow-hidden overflow-y-auto rounded-lg bg-neutral-900">
@@ -18,6 +19,7 @@ const SearchPage: FC<{
           <SearchInput />
         </div>
       </Header>
+      <SearchContent songs={songs} />
     </div>
   );
 };
