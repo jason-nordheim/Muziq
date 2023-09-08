@@ -12,9 +12,9 @@ const Modal: FC<PropsWithChildren<ModalProps>> = ({ isOpen, onChange, title, des
   return (
     <Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
       <Portal>
-        <Overlay className="bg-neutral-900/90 backdrop-blur-sm fixed inset-0" />
+        <Overlay className="fixed inset-0 bg-neutral-900/90 backdrop-blur-sm" />
         <Content className="fixed drop-shadow-md border border-neutral-100 top-[50%] left-[50%] max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw] md:max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-md bg-neutral-800 p-[25px] focus:outline-none">
-          <Title className="text-xl text-center font-bold mb-4">{title}</Title>
+          <Title className="mb-4 text-xl font-bold text-center">{title}</Title>
           <Description className="mb-5 text-sm leading-normal text-center">{description}</Description>
           <div>{children}</div>
           <Close asChild>
