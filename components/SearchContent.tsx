@@ -3,6 +3,7 @@
 import { Song } from "@/types";
 import { FC } from "react";
 import MediaItem from "./MediaItem";
+import LikeButton from "./LikeButton";
 
 const SearchContent: FC<{ songs: Song[] }> = ({ songs }) => {
   if (songs.length === 0) {
@@ -13,9 +14,10 @@ const SearchContent: FC<{ songs: Song[] }> = ({ songs }) => {
       {songs.map((song) => {
         return (
           <div key={song.id} className="flex items-center w-full gap-x-4">
-            <div className="">
+            <div className="flex-1">
               <MediaItem onClick={() => {}} data={song} />
             </div>
+            <LikeButton songId={song.id} />
           </div>
         );
       })}
