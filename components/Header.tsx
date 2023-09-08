@@ -7,12 +7,10 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome, HiSearch } from "react-icons/hi";
 import Button from "./Button";
 import useAuthModal from "@/hooks/useAuthModal";
-import { useSessionContext } from "@supabase/auth-helpers-react";
 
 const Header: FC<PropsWithChildren<{ className?: string }>> = ({ children, className }) => {
   const router = useRouter();
 
-  const { session } = useSessionContext();
   const authModal = useAuthModal();
 
   const handleLogout = () => {
