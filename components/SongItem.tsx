@@ -8,7 +8,10 @@ const SongItem: FC<{ onClick: (id: string) => void; data: Song }> = ({ data, onC
   const imgPath = useLoadImage(data);
 
   return (
-    <div className="relative flex flex-col items-center justify-center p-3 overflow-hidden transition rounded-md cursor-pointer group gap-x-4 bg-neutral-400/5 hover:bg-neutral-400/10">
+    <div
+      className="relative flex flex-col items-center justify-center p-3 overflow-hidden transition rounded-md cursor-pointer group gap-x-4 bg-neutral-400/5 hover:bg-neutral-400/10"
+      onClick={() => onClick(data.id)}
+    >
       <div className="relative w-full h-full overflow-hidden rounded-md aspect-square">
         <Image className="object-cover" src={imgPath || ""} fill alt="cover art" />
       </div>

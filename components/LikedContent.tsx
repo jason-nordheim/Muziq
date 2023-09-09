@@ -6,10 +6,12 @@ import { useRouter } from "next/navigation";
 import { FC, useEffect } from "react";
 import MediaItem from "./MediaItem";
 import LikeButton from "./LikeButton";
+import useOnPlay from "@/hooks/useOnPlay";
 
 const LikedContent: FC<{ songs: Song[] }> = ({ songs }) => {
   const router = useRouter();
   const { user, isLoading } = useUser();
+  const onPlay = useOnPlay(songs);
 
   useEffect(() => {
     if (!isLoading && !user) {
@@ -27,7 +29,7 @@ const LikedContent: FC<{ songs: Song[] }> = ({ songs }) => {
         return (
           <div className="flex items-center w-full gap-x-4" key={song.id}>
             <div className="flex-1">
-              <MediaItem data={song} onClick={() => ({})} />
+              <MediaItem data={song} onClick={(id) => onPlay(id)} />
             </div>
             <LikeButton songId={song.id} />
           </div>
