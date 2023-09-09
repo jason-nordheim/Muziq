@@ -9,8 +9,6 @@ export const revalidate = 0;
 
 const LikedSongs = async () => {
   const likedSongs = await getLikedSongs();
-  console.log({ likedSongs });
-
   return (
     <div className="w-full h-full overflow-hidden overflow-y-auto rounded-lg bg-neutral-900">
       <Header>
