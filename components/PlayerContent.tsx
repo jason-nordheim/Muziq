@@ -95,7 +95,7 @@ const PlayerContent: FC<{ song: Song; songUrl: string }> = ({ song, songUrl }) =
       {/** mobile view */}
       <div className="flex items-center justify-end w-full col-auto md:hidden">
         <div className="flex items-center justify-end w-10 h-10 p-1 rounded-full cursor-pointer">
-          <Icon size={30} />
+          <Icon size={30} onClick={() => handlePlay()} />
         </div>
       </div>
       {/** desktop view */}

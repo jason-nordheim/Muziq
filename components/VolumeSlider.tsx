@@ -17,8 +17,9 @@ const VolumeSlider: FC<{ value?: number; onChange: (value: number) => void }> = 
       step={0.1}
       aria-label="Volume"
     >
-      <Track className="relative rounded-full bg-neutral-600 grow h-[3px]" />
-      <Range className="absolute h-full bg-white rounded-full" />
+      <Track className="relative rounded-full bg-neutral-600 grow h-[3px]">
+        <Range className="absolute h-full bg-white rounded-full" />
+      </Track>
     </Root>
   );
 };
