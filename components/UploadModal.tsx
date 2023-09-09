@@ -22,6 +22,9 @@ const UploadModal = () => {
   const form = useForm<FieldValues>({
     defaultValues: {
       author: "",
+      album: "",
+      genre: "",
+      duration: 0,
       title: "",
       song: null,
       image: null,
@@ -72,6 +75,9 @@ const UploadModal = () => {
         user_id: user.id,
         title: values.title,
         author: values.author,
+        genre: values.genre,
+        duration: values.duration,
+        album: values.album,
         image_path: imageUpload.data?.path,
         song_path: songUpload.data?.path,
       });
@@ -107,8 +113,17 @@ const UploadModal = () => {
           {...form.register("author", { required: true })}
           placeholder="Song Author"
         />
+        <Input id="album" disabled={isLoading} {...form.register("album", { required: false })} placeholder="Album" />
+        <Input id="genre" disabled={isLoading} {...form.register("genre", { required: false })} placeholder="Genre" />
+        <Input
+          id="duration"
+          disabled={isLoading}
+          {...form.register("duration", { required: false })}
+          type="number"
+          placeholder="Duration"
+        />
         <div>
-          <div className="pb-1">Select a song file</div>
+          <div className="pb-1 ml-1 text-sm">mp3 File</div>
           <Input
             id="song"
             type="file"
@@ -118,7 +133,7 @@ const UploadModal = () => {
           />
         </div>
         <div>
-          <div className="pb-1">Select a song file</div>
+          <div className="pb-1 ml-1 text-sm">Image/Album Art</div>
           <Input
             id="image"
             type="file"
