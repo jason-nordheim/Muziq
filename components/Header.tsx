@@ -54,10 +54,10 @@ const Header: FC<PropsWithChildren<{ className?: string }>> = ({ children, class
         {/** mobile */}
         <div className="flex items-center md:hidden gap-x-2">
           <button className="flex items-center justify-center p-2 bg-white rounded-full hover:opacity-75">
-            <HiHome className="text-black" size={20} />
+            <HiHome className="text-black" size={20} onClick={() => router.push("/")} />
           </button>
           <button className="flex items-center justify-center p-2 bg-white rounded-full hover:opacity-75">
-            <HiSearch className="text-black" size={20} />
+            <HiSearch className="text-black" size={20} onClick={() => router.push("/search")} />
           </button>
         </div>
         <div className="flex items-center justify-between gap-x-4">
@@ -72,6 +72,7 @@ const Header: FC<PropsWithChildren<{ className?: string }>> = ({ children, class
             </div>
           ) : (
             <>
+              {/** desktop */}
               <div>
                 <Button className="font-medium bg-transparent text-neutral-300" onClick={authModal.onOpen}>
                   Sign Up
