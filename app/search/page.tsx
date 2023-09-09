@@ -4,6 +4,8 @@ import SearchContent from "@/components/SearchContent";
 import SearchInput from "@/components/SearchInput";
 import { FC } from "react";
 
+export const revalidate = 0;
+
 const SearchPage: FC<{
   searchParams: {
     title: string;
