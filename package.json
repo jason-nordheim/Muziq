@@ -26,6 +26,7 @@
     "react-hook-form": "7.46.1",
     "react-hot-toast": "2.4.1",
     "react-icons": "4.11.0",
+    "react-spinners": "0.13.8",
     "stripe": "13.5.0",
     "supabase": "1.93.0",
     "tailwind-merge": "1.14.0",
