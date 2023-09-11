@@ -41,7 +41,7 @@ export interface Price {
   currency?: string;
   type?: any; // todo: Stripe.Price.Type
   interval?: any; // todo: Stripe.Price.Recurring.Interval;
-  interval_counter?: number;
+  interval_count?: number;
   trial_period_days?: number;
   metadata?: Stripe.Metadata;
   products?: Product;
