@@ -5,7 +5,7 @@ import { PulseLoader } from "react-spinners";
 
 const Loading = () => {
   return (
-    <Box className="h-full flex items-center justify-center transition">
+    <Box className="h-full flex flex-grow items-center justify-center transition">
       <PulseLoader color="#22c55e" size={40} />
     </Box>
   );

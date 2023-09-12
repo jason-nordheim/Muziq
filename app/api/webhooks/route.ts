@@ -33,6 +33,7 @@ export const POST = async (request: Request) => {
   }
 
   if (relevantEvents.has(event.type)) {
+    console.log(event.data.object);
     try {
       switch (event.type) {
         case "product.created":
@@ -63,7 +64,7 @@ export const POST = async (request: Request) => {
           throw new Error(`Unhandled Event: ${event.type}`);
       }
     } catch (error: any) {
-      console.error("Webhook Error", error);
+      console.error("Webhook Error", JSON.stringify(error));
       return new NextResponse("Webhook Error", { status: 400 });
     }
   }

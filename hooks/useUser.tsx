@@ -28,7 +28,7 @@ const MyUserProvider: FC<UserContextProps> = (props) => {
 
   const getUserDetails = () => supabase.from("users").select("*").single();
   const getSubscription = () =>
-    supabase.from("subscriptions").select("*, prices(*, products(*))").in("status", ["trailing", "active"]).single();
+    supabase.from("subscriptions").select("*, prices(*, products(*))").in("status", ["active"]).single();
 
   useEffect(() => {
     if (user && !isLoadingData && !userDetails && !subscription) {
@@ -44,7 +44,6 @@ const MyUserProvider: FC<UserContextProps> = (props) => {
         if (subscriptionPromise.status < 300 && subscriptionPromise.status > 199 && subscriptionPromise.data) {
           setSubscription(subscriptionPromise.data as Subscription);
         }
-
         setIsLoadingData(false);
       });
     } else if (!user && !isLoadingUser && !isLoadingData) {

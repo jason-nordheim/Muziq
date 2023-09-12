@@ -7,7 +7,7 @@ export const getUrl = () => {
   return url;
 };
 
-export const postData = async ({ url, data, log }: { url: string; data: { price: Price }; log?: boolean }) => {
+export const postData = async ({ url, data, log }: { url: string; data?: { price: Price }; log?: boolean }) => {
   if (log) console.log("POST", url, data);
 
   const res = await fetch(url, {
@@ -19,7 +19,6 @@ export const postData = async ({ url, data, log }: { url: string; data: { price:
 
   if (!res.ok) {
     if (log) console.error("POST Failed", url, data, res);
-
     throw new Error(res.statusText);
   }
 

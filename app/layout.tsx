@@ -8,6 +8,7 @@ import ModalProvider from "@/providers/ModalProvider";
 import ToastProvider from "@/providers/ToastProvider";
 import getSongsByUserId from "@/actions/getSongsByUserId";
 import Player from "@/components/Player";
+import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices";
 
 // prevent caching
 export const revalidate = 0;
@@ -15,19 +16,20 @@ export const revalidate = 0;
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Spotify Clone",
+  title: "Muziq",
   description: "Your new music player",
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const songs = await getSongsByUserId();
+  const products = await getActiveProductsWithPrices();
   return (
     <html lang="en">
       <body className={font.className}>
         <ToastProvider />
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider />
+            <ModalProvider products={products} />
             <Sidebar songs={songs}>{children}</Sidebar>
             <Player />
           </UserProvider>

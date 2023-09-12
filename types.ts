@@ -39,12 +39,16 @@ export interface Price {
   description?: string;
   unit_amount?: number;
   currency?: string;
-  type?: any; // todo: Stripe.Price.Type
+  type?: string; // todo: Stripe.Price.Type
   interval?: any; // todo: Stripe.Price.Recurring.Interval;
   interval_count?: number;
   trial_period_days?: number;
   metadata?: Stripe.Metadata;
   products?: Product;
+}
+
+export interface ProductWithPrice extends Product {
+  prices?: Price[];
 }
 
 export interface Subscription {
