@@ -17,9 +17,9 @@ const ListItem: FC<ListItemProps> = ({ icon: Icon, name, href }) => {
   const router = useRouter();
 
   const onClick = () => {
-    // todo: add authentication before push
     router.push(href);
   };
+
   return (
     <button
       className="relative flex items-center pr-4 overflow-hidden transition rounded-md group gap-x-4 bg-neutral-100/10 hover:bg-neutral-100/20"

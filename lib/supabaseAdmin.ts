@@ -106,7 +106,6 @@ const manageSubscriptionStatusChange = async (subscriptionId: string, customerId
     // @ts-ignore
     status: subscription.status,
     price_id: subscription.items.data[0].price.id,
-    //TODO check quantity on subscription
     // @ts-ignore
     quantity: subscription.quantity,
     cancel_at_period_end: subscription.cancel_at_period_end,

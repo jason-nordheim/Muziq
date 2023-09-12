@@ -5,15 +5,17 @@ import Image from "next/image";
 import useLoadImage from "@/hooks/useLoadImage";
 import { Song } from "@/types";
 import { FC } from "react";
+import usePlayer from "@/hooks/usePlayer";
 
 const MediaItem: FC<{ data: Song; onClick: (id: string) => void }> = ({ data, onClick }) => {
+  const player = usePlayer();
   const imgUrl = useLoadImage(data);
 
   const handleClick = () => {
     if (onClick) {
       return onClick(data.id);
     }
-    // todo: default turn on player
+    return player.setId(data.id);
   };
 
   return (
