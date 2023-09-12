@@ -30,6 +30,6 @@ export const POST = async () => {
     return NextResponse.json({ url });
   } catch (error) {
     console.error(error);
-    return new NextResponse("Internal Error", 500);
+    return new NextResponse("Internal Error", { status: 500 });
   }
 };
