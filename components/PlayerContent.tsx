@@ -4,6 +4,7 @@ import { Song } from "@/types";
 import { FC, useEffect, useState } from "react";
 import MediaItem from "./MediaItem";
 import LikeButton from "./LikeButton";
+// @ts-ignore
 import useSound from "use-sound";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
