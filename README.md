@@ -2,6 +2,8 @@
 
 This application is a Music app that allows users to upload music and play music in the cloud.
 
+![image](./readme-assets/MuziqScreenshot.png)
+
 The UI is designed to mirror that of [Spotify](https://open.spotify.com/)
 
 ## Features
